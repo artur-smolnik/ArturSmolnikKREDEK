@@ -8,14 +8,42 @@ namespace ArturSmolnikLab1
 {
     class Factors
     {
-        private long MedicineLevel;
-        private long TechLevel;
-        private long Population;
+        private double MedicineLevel;
+        private double TechLevel;
+        private double Population;
 
-        long GetMedicineLevel() { return MedicineLevel; }
-        long GetTechLevel() { return TechLevel; }
-        long GetPopulation() { return Population; }
+        public double GetMedicineLevel() { return MedicineLevel; }
+        public double GetTechLevel() { return TechLevel; }
+        public double GetPopulation() { return Population; }
 
-        void 
+        public Factors()
+        {
+            Population = 2;
+        }
+        public void ModifyMedicineLevelByMultiplying(double multiplier)
+        {
+            MedicineLevel += Math.Floor(MedicineLevel * multiplier);               
+        }
+        public void ModifyTechLevelByMultiplying(double multiplier)
+        {
+            TechLevel += Math.Floor(TechLevel * multiplier);           
+        }
+        public void ModifyPopulationByMultiplying(double multiplier)
+        {
+            Population += Math.Floor(Population * multiplier);
+        }
+
+        public void ModifyMedicineLevelByAddition(double addition)
+        {
+            MedicineLevel += addition;
+        }
+        public void ModifyTechLevelByAddition(double addition)
+        {
+            TechLevel += addition;
+        }
+        public void ModifyPopulationByAddition(double addition)
+        {
+            Population += addition;
+        }
     }
 }
