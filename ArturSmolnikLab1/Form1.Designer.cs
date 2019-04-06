@@ -41,6 +41,11 @@
             this.buttonAddRace = new System.Windows.Forms.Button();
             this.labelRacesAmount = new System.Windows.Forms.Label();
             this.labelRacesAmountInfo = new System.Windows.Forms.Label();
+            this.labelCurrentPlanetInfo = new System.Windows.Forms.Label();
+            this.labelInhabitantsInfo = new System.Windows.Forms.Label();
+            this.labelInhabitants = new System.Windows.Forms.Label();
+            this.labelDensityInfo = new System.Windows.Forms.Label();
+            this.labelDensity = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timerMainWorldTimer
@@ -57,7 +62,7 @@
             this.labelPopulationNumber.TabIndex = 0;
             this.labelPopulationNumber.Text = "0";
             this.labelPopulationNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelPopulationNumber.Click += new System.EventHandler(this.label1_Click);
+            this.labelPopulationNumber.Click += new System.EventHandler(this.LabelPopulation);
             // 
             // buttonTestButton
             // 
@@ -80,13 +85,13 @@
             this.labelPopulationNumberInfo.TabIndex = 3;
             this.labelPopulationNumberInfo.Text = "Population:";
             this.labelPopulationNumberInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelPopulationNumberInfo.Click += new System.EventHandler(this.populationNumberInfo_Click);
+            this.labelPopulationNumberInfo.Click += new System.EventHandler(this.labelPopulationNumberInfo_Click);
             // 
             // labelPlanetsNumberInfo
             // 
             this.labelPlanetsNumberInfo.AutoSize = true;
             this.labelPlanetsNumberInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.labelPlanetsNumberInfo.Location = new System.Drawing.Point(12, 36);
+            this.labelPlanetsNumberInfo.Location = new System.Drawing.Point(12, 94);
             this.labelPlanetsNumberInfo.Name = "labelPlanetsNumberInfo";
             this.labelPlanetsNumberInfo.Size = new System.Drawing.Size(132, 17);
             this.labelPlanetsNumberInfo.TabIndex = 4;
@@ -98,7 +103,7 @@
             // 
             this.labelPlanetsNumber.AutoSize = true;
             this.labelPlanetsNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.labelPlanetsNumber.Location = new System.Drawing.Point(149, 36);
+            this.labelPlanetsNumber.Location = new System.Drawing.Point(149, 94);
             this.labelPlanetsNumber.Name = "labelPlanetsNumber";
             this.labelPlanetsNumber.Size = new System.Drawing.Size(16, 17);
             this.labelPlanetsNumber.TabIndex = 5;
@@ -110,7 +115,7 @@
             // 
             this.labelTechLevelInfo.AutoSize = true;
             this.labelTechLevelInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.labelTechLevelInfo.Location = new System.Drawing.Point(12, 65);
+            this.labelTechLevelInfo.Location = new System.Drawing.Point(14, 117);
             this.labelTechLevelInfo.Name = "labelTechLevelInfo";
             this.labelTechLevelInfo.Size = new System.Drawing.Size(77, 17);
             this.labelTechLevelInfo.TabIndex = 4;
@@ -122,7 +127,7 @@
             // 
             this.labelTechLevel.AutoSize = true;
             this.labelTechLevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.labelTechLevel.Location = new System.Drawing.Point(149, 65);
+            this.labelTechLevel.Location = new System.Drawing.Point(149, 117);
             this.labelTechLevel.Name = "labelTechLevel";
             this.labelTechLevel.Size = new System.Drawing.Size(16, 17);
             this.labelTechLevel.TabIndex = 5;
@@ -154,28 +159,92 @@
             // 
             this.labelRacesAmount.AutoSize = true;
             this.labelRacesAmount.BackColor = System.Drawing.Color.Yellow;
-            this.labelRacesAmount.Location = new System.Drawing.Point(149, 94);
+            this.labelRacesAmount.Location = new System.Drawing.Point(149, 143);
             this.labelRacesAmount.Name = "labelRacesAmount";
             this.labelRacesAmount.Size = new System.Drawing.Size(16, 17);
             this.labelRacesAmount.TabIndex = 8;
             this.labelRacesAmount.Text = "0";
+            this.labelRacesAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelRacesAmount.Click += new System.EventHandler(this.label1_Click_3);
             // 
             // labelRacesAmountInfo
             // 
             this.labelRacesAmountInfo.AutoSize = true;
             this.labelRacesAmountInfo.BackColor = System.Drawing.Color.Yellow;
-            this.labelRacesAmountInfo.Location = new System.Drawing.Point(12, 94);
+            this.labelRacesAmountInfo.Location = new System.Drawing.Point(12, 143);
             this.labelRacesAmountInfo.Name = "labelRacesAmountInfo";
             this.labelRacesAmountInfo.Size = new System.Drawing.Size(103, 17);
             this.labelRacesAmountInfo.TabIndex = 9;
             this.labelRacesAmountInfo.Text = "Races amount:";
+            this.labelRacesAmountInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelRacesAmountInfo.Click += new System.EventHandler(this.labelRacesAmountInfo_Click);
+            // 
+            // labelCurrentPlanetInfo
+            // 
+            this.labelCurrentPlanetInfo.AutoSize = true;
+            this.labelCurrentPlanetInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.labelCurrentPlanetInfo.Location = new System.Drawing.Point(12, 36);
+            this.labelCurrentPlanetInfo.Name = "labelCurrentPlanetInfo";
+            this.labelCurrentPlanetInfo.Size = new System.Drawing.Size(129, 17);
+            this.labelCurrentPlanetInfo.TabIndex = 10;
+            this.labelCurrentPlanetInfo.Text = "Current planet info:";
+            this.labelCurrentPlanetInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelInhabitantsInfo
+            // 
+            this.labelInhabitantsInfo.AutoSize = true;
+            this.labelInhabitantsInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.labelInhabitantsInfo.Location = new System.Drawing.Point(12, 65);
+            this.labelInhabitantsInfo.Name = "labelInhabitantsInfo";
+            this.labelInhabitantsInfo.Size = new System.Drawing.Size(81, 17);
+            this.labelInhabitantsInfo.TabIndex = 11;
+            this.labelInhabitantsInfo.Text = "Inhabitants:";
+            this.labelInhabitantsInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelInhabitants
+            // 
+            this.labelInhabitants.AutoSize = true;
+            this.labelInhabitants.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.labelInhabitants.Location = new System.Drawing.Point(149, 65);
+            this.labelInhabitants.Name = "labelInhabitants";
+            this.labelInhabitants.Size = new System.Drawing.Size(16, 17);
+            this.labelInhabitants.TabIndex = 12;
+            this.labelInhabitants.Text = "0";
+            this.labelInhabitants.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelDensityInfo
+            // 
+            this.labelDensityInfo.AutoSize = true;
+            this.labelDensityInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.labelDensityInfo.Location = new System.Drawing.Point(14, 171);
+            this.labelDensityInfo.Name = "labelDensityInfo";
+            this.labelDensityInfo.Size = new System.Drawing.Size(59, 17);
+            this.labelDensityInfo.TabIndex = 13;
+            this.labelDensityInfo.Text = "Density:";
+            this.labelDensityInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelDensity
+            // 
+            this.labelDensity.AutoSize = true;
+            this.labelDensity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.labelDensity.Location = new System.Drawing.Point(149, 171);
+            this.labelDensity.Name = "labelDensity";
+            this.labelDensity.Size = new System.Drawing.Size(16, 17);
+            this.labelDensity.TabIndex = 14;
+            this.labelDensity.Text = "0";
+            this.labelDensity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelDensity.Click += new System.EventHandler(this.labelDensity_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 553);
+            this.Controls.Add(this.labelDensity);
+            this.Controls.Add(this.labelDensityInfo);
+            this.Controls.Add(this.labelInhabitants);
+            this.Controls.Add(this.labelInhabitantsInfo);
+            this.Controls.Add(this.labelCurrentPlanetInfo);
             this.Controls.Add(this.labelRacesAmountInfo);
             this.Controls.Add(this.labelRacesAmount);
             this.Controls.Add(this.buttonAddRace);
@@ -209,6 +278,11 @@
         private System.Windows.Forms.Button buttonAddRace;
         private System.Windows.Forms.Label labelRacesAmount;
         private System.Windows.Forms.Label labelRacesAmountInfo;
+        private System.Windows.Forms.Label labelCurrentPlanetInfo;
+        private System.Windows.Forms.Label labelInhabitantsInfo;
+        private System.Windows.Forms.Label labelInhabitants;
+        private System.Windows.Forms.Label labelDensityInfo;
+        private System.Windows.Forms.Label labelDensity;
     }
 }
 

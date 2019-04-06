@@ -23,11 +23,11 @@ namespace ArturSmolnikLab1
         {
             if(listOfPlanets.getCurrentPlanet().CheckIfDensityTooHigh())
             {
-                if(random.Next(0,30)==0)
+                if(random.Next(0,3)==0)
                 {
                     listOfPlanets.getCurrentPlanet().AddOneNewRaceToPlanet();
 
-                    factors.ModifyTechLevelByMultiplying(1.2);
+                    factors.ModifyTechLevelByAddition(100);
                     
                     return true;
                 }

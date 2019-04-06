@@ -10,10 +10,12 @@ namespace ArturSmolnikLab1
     {
         private ListOfPlanets listOfPlanets;
         private Random random;
+        private Factors factors;
 
-        public Colonisation(ListOfPlanets listOfPlanets)
+        public Colonisation(ListOfPlanets listOfPlanets, Factors factors)
         {
             this.listOfPlanets = listOfPlanets;
+            this.factors = factors;
             random = new Random();
         }
 
@@ -22,10 +24,13 @@ namespace ArturSmolnikLab1
         {
             if (listOfPlanets.getCurrentPlanet().CheckIfDensityTooHigh())
             {
-                if (random.Next(0, 30) == 0)
-                {
-                    listOfPlanets.AddNewPlanet();
-                    return true;
+                if (factors.GetTechLevel() >3000) { 
+                    if (random.Next(0, 30) == 0)
+                    {
+                        factors.ModifyTechLevelBySubtraction(3000);
+                        listOfPlanets.AddNewPlanet();
+                        return true;
+                    }
                 }
             }
             return false;

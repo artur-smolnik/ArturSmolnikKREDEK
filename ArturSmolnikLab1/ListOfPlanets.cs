@@ -13,8 +13,9 @@ namespace ArturSmolnikLab1
 
         public ListOfPlanets()
         {
-           listOfPlanets  = new List<Planet>();
-           random = new Random();
+            listOfPlanets  = new List<Planet>();
+            listOfPlanets.Add(new Planet());
+            random = new Random();
         }
 
         public int getPlanetsAmount()
@@ -23,7 +24,7 @@ namespace ArturSmolnikLab1
         }
 
         public Planet getCurrentPlanet()
-        {
+        {            
             return listOfPlanets[listOfPlanets.Count - 1];
         }
 

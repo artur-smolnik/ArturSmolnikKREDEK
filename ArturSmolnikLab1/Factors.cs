@@ -12,11 +12,11 @@ namespace ArturSmolnikLab1
         private double TechLevel;
         private ListOfPlanets listOfPlanets;
         
-        public double GetTechLevel() { return TechLevel; }
+        
 
-        public Factors()
+        public Factors(ListOfPlanets listOfPlanets)
         {
-            
+            this.listOfPlanets = listOfPlanets;
         }        
 
         public double GetPopulation()
@@ -29,6 +29,12 @@ namespace ArturSmolnikLab1
             return Population;
         }
 
+        public double GetTechLevel() { return TechLevel; }
+
+        public void ModifyTechLevelBySubtraction(double subtraction)
+        {
+            TechLevel -= subtraction;
+        }
         public void ModifyTechLevelByMultiplying(double multiplier)
         {
             TechLevel += Math.Floor(TechLevel * multiplier);

@@ -8,17 +8,18 @@ namespace ArturSmolnikLab1
 {
     class Planet
     {
-        private Random random = new Random();
+        private Random random;
         private int AmountOfRaces;
-        private readonly int Area;
+        private double Area;
         private double Inhabitants;
 
 
         public Planet()
         {
+            random = new Random();
             AmountOfRaces = 1;
-            Area = random.Next(100000, 2147483647);
-            Inhabitants = random.Next(random.Next(10, 10000), random.Next(100000, 200000));
+            Area = random.Next(100000, 214745);
+            Inhabitants = random.Next(random.Next(123450, 234560), random.Next(1000000, 2000000));
 
 
         }
@@ -29,12 +30,12 @@ namespace ArturSmolnikLab1
 
         public int  GetDensity()
         {
-            return (int)Inhabitants / Area;
+            return (int)Math.Floor(Inhabitants / Area);
         }
 
         public bool CheckIfDensityTooHigh()
         {
-            if (GetDensity() > 1000) return true;
+            if (GetDensity() > 10) return true;
             else return false;
         }
 
@@ -46,6 +47,10 @@ namespace ArturSmolnikLab1
         public void AddOneNewRaceToPlanet()
         {
             AmountOfRaces++;
+        }
+        public double GetArea()
+        {
+            return Area;
         }
 
         public void RemoveOneRaceFromPlanet()

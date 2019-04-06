@@ -13,26 +13,45 @@ namespace ArturSmolnikLab1
     
     public partial class Form1 : Form
     {
-        private Factors factors = new Factors();
-        private ListOfPlanets listOfPlanets = new ListOfPlanets();
+        private ListOfPlanets listOfPlanets;
+        private Factors factors;
+        private RaceControl raceControl;
+        private WarControl warControl;
+        private Colonisation colonisation;
+
+        
         
         public Form1()
-        {            
+        {
             InitializeComponent();
+
+            listOfPlanets = new ListOfPlanets();
+            factors = new Factors(listOfPlanets);
+            raceControl = new RaceControl(listOfPlanets, factors);
+            warControl = new WarControl(listOfPlanets);
+            colonisation = new Colonisation(listOfPlanets, factors);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            listOfPlanets.getCurrentPlanet().ModifyPopulationByAddition(5);
-            labelPopulationNumber.Text = factors.GetPopulation().ToString();
-
             factors.ModifyTechLevelByAddition(1);
-            labelTechLevel.Text = factors.GetTechLevel().ToString();
+            listOfPlanets.getCurrentPlanet().ModifyPopulationByAddition(50000);
 
+            labelPopulationNumber.Text = factors.GetPopulation().ToString();
+            labelInhabitants.Text = listOfPlanets.getCurrentPlanet().getInhabitants().ToString();
             labelPlanetsNumber.Text = listOfPlanets.getPlanetsAmount().ToString();
+            labelTechLevel.Text = factors.GetTechLevel().ToString();
+            labelRacesAmount.Text = listOfPlanets.getCurrentPlanet().GetAmountfRaces().ToString();
+            labelDensity.Text = listOfPlanets.getCurrentPlanet().GetDensity().ToString();
+            raceControl.tryTooCreateNewRace();
+            warControl.tryToStartWar();
+            colonisation.tryToColonize();
+
+
+            
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void LabelPopulation(object sender, EventArgs e)
         {
             
         }
@@ -44,7 +63,7 @@ namespace ArturSmolnikLab1
             timerMainWorldTimer.Start();
         }
 
-        private void populationNumberInfo_Click(object sender, EventArgs e)
+        private void labelPopulationNumberInfo_Click(object sender, EventArgs e)
         {
 
         }
@@ -91,6 +110,16 @@ namespace ArturSmolnikLab1
         }
 
         private void buttonAddPlanet_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelRacesAmountInfo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelDensity_Click(object sender, EventArgs e)
         {
 
         }

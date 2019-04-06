@@ -21,7 +21,7 @@ namespace ArturSmolnikLab1
         {
             if (listOfPlanets.getCurrentPlanet().CheckIfDensityTooHigh() && listOfPlanets.getCurrentPlanet().GetAmountfRaces() > 2)
             {
-                if (random.Next(0, 40) == 0)
+                if (random.Next(0, 4) == 0)
                 {
                     listOfPlanets.getCurrentPlanet().RemoveOneRaceFromPlanet();
                     return true;
