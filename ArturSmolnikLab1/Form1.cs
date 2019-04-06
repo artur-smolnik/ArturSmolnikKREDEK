@@ -14,7 +14,7 @@ namespace ArturSmolnikLab1
     public partial class Form1 : Form
     {
         private Factors factors = new Factors();
-        private ConquerredPlanets conquerredPlanets = new ConquerredPlanets();
+        private ListOfPlanets conquerredPlanets = new ListOfPlanets();
         private ListOfRaces listOfRaces = new ListOfRaces();
         
         
@@ -26,14 +26,14 @@ namespace ArturSmolnikLab1
         private void timer1_Tick(object sender, EventArgs e)
         {
             factors.ModifyPopulationByAddition(5);
-            populationNumber.Text = factors.GetPopulation().ToString();
+            labelPopulationNumber.Text = factors.GetPopulation().ToString();
 
             factors.ModifyTechLevelByAddition(1);
-            techLevel.Text = factors.GetTechLevel().ToString();
+            labelTechLevel.Text = factors.GetTechLevel().ToString();
 
-            PlanetsNumber.Text = conquerredPlanets.getPlanetsAmount().ToString();
+            labelPlanetsNumber.Text = conquerredPlanets.getPlanetsAmount().ToString();
 
-            racesAmount.Text = listOfRaces.getRacesAmount().ToString();
+            labelRacesAmount.Text = listOfRaces.getRacesAmount().ToString();
 
 
 
@@ -50,7 +50,7 @@ namespace ArturSmolnikLab1
 
         private void button_Click(object sender, EventArgs e)
         {
-            MainWorldTimer.Start();
+            timerMainWorldTimer.Start();
         }
 
         private void populationNumberInfo_Click(object sender, EventArgs e)

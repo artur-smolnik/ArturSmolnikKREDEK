@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace ArturSmolnikLab1
 {
-    class ConquerredPlanets
+    class ListOfPlanets
     {
-        private static List<Planet> ListOfPlanets = new List<Planet>();
+        private static List<Planet> listOfPlanets = new List<Planet>();
 
-        public ConquerredPlanets()
+        public ListOfPlanets()
         {
-           ListOfPlanets  = new List<Planet>();
+           listOfPlanets  = new List<Planet>();
         }
 
         public void addNewPlanet(Planet planet)
         {
-            ListOfPlanets.Add(planet);
+            listOfPlanets.Add(planet);
         }
 
         public int getPlanetsAmount()
         {
-            return ListOfPlanets.Count;
+            return listOfPlanets.Count;
         }
     }
 }
