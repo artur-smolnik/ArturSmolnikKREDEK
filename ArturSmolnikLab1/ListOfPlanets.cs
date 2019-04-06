@@ -8,13 +8,13 @@ namespace ArturSmolnikLab1
 {
     class ListOfPlanets
     {
-        private static List<Planet> listOfPlanets = new List<Planet>();
+        private static List<Planet> listOfPlanets;
         private Random random;
 
         public ListOfPlanets()
         {
            listOfPlanets  = new List<Planet>();
-            random = new Random();
+           random = new Random();
         }
 
         public int getPlanetsAmount()

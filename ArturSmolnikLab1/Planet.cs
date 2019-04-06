@@ -9,27 +9,27 @@ namespace ArturSmolnikLab1
     class Planet
     {
         private Random random = new Random();
-        private static int IdCounter = 0;
-        private int PlanetId;
         private int AmountOfRaces;
         private readonly int Area;
-        private int Inhabitants;
+        private double Inhabitants;
 
 
         public Planet()
         {
-            PlanetId = IdCounter;
             AmountOfRaces = 1;
             Area = random.Next(100000, 2147483647);
             Inhabitants = random.Next(random.Next(10, 10000), random.Next(100000, 200000));
 
-            IdCounter++;
 
+        }
+        public double getInhabitants()
+        {
+            return Inhabitants;
         }
 
         public int  GetDensity()
         {
-            return Inhabitants / Area;
+            return (int)Inhabitants / Area;
         }
 
         public bool CheckIfDensityTooHigh()
@@ -53,10 +53,14 @@ namespace ArturSmolnikLab1
             AmountOfRaces--;
         }
 
-        public void ModifyNumberOfInhabitants()
+        public void ModifyPopulationByMultiplying(double multiplier)
         {
-
+            Inhabitants += Math.Floor(Inhabitants * multiplier);
         }
 
+        public void ModifyPopulationByAddition(double addition)
+        {
+            Inhabitants += addition;
+        }
     } 
 }

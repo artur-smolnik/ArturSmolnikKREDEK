@@ -15,17 +15,15 @@ namespace ArturSmolnikLab1
     {
         private Factors factors = new Factors();
         private ListOfPlanets listOfPlanets = new ListOfPlanets();
-
-        
         
         public Form1()
-        {
+        {            
             InitializeComponent();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            factors.ModifyPopulationByAddition(5);
+            listOfPlanets.getCurrentPlanet().ModifyPopulationByAddition(5);
             labelPopulationNumber.Text = factors.GetPopulation().ToString();
 
             factors.ModifyTechLevelByAddition(1);
@@ -90,6 +88,11 @@ namespace ArturSmolnikLab1
         private void buttonAddRace_Click(object sender, EventArgs e)
         {
             listOfPlanets.getCurrentPlanet().AddOneNewRaceToPlanet();
+        }
+
+        private void buttonAddPlanet_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

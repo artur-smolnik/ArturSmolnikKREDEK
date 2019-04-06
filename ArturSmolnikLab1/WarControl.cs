@@ -9,7 +9,6 @@ namespace ArturSmolnikLab1
     class WarControl
     {
         private ListOfPlanets listOfPlanets;
-        private Planet planet;
         private Random random;
 
         public WarControl(ListOfPlanets listOfPlanets)
