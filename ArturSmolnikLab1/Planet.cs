@@ -12,10 +12,9 @@ namespace ArturSmolnikLab1
         private static int IdCounter = 0;
         private int PlanetId;
         private int AmountOfRaces;
-        private int Area;
-        private int Density;
+        private readonly int Area;
         private int Inhabitants;
-        List<Race> InhabitedRaces = new List<Race>();
+
 
         public Planet()
         {
@@ -27,7 +26,37 @@ namespace ArturSmolnikLab1
             IdCounter++;
 
         }
-       
+
+        public int  GetDensity()
+        {
+            return Inhabitants / Area;
+        }
+
+        public bool CheckIfDensityTooHigh()
+        {
+            if (GetDensity() > 1000) return true;
+            else return false;
+        }
+
+        public int GetAmountfRaces()
+        {
+            return AmountOfRaces;
+        }
+
+        public void AddOneNewRaceToPlanet()
+        {
+            AmountOfRaces++;
+        }
+
+        public void RemoveOneRaceFromPlanet()
+        {
+            AmountOfRaces--;
+        }
+
+        public void ModifyNumberOfInhabitants()
+        {
+
+        }
 
     } 
 }

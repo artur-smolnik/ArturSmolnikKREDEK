@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ArturSmolnikLab1
 {
-    class War
+    class PopulationControl
     {
-        
-        public Race StartWar(Race race1, Race race2) {return null; }
+
     }
 }

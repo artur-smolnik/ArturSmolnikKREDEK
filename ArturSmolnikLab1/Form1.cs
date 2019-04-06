@@ -14,8 +14,8 @@ namespace ArturSmolnikLab1
     public partial class Form1 : Form
     {
         private Factors factors = new Factors();
-        private ListOfPlanets conquerredPlanets = new ListOfPlanets();
-        private ListOfRaces listOfRaces = new ListOfRaces();
+        private ListOfPlanets listOfPlanets = new ListOfPlanets();
+
         
         
         public Form1()
@@ -31,14 +31,7 @@ namespace ArturSmolnikLab1
             factors.ModifyTechLevelByAddition(1);
             labelTechLevel.Text = factors.GetTechLevel().ToString();
 
-            labelPlanetsNumber.Text = conquerredPlanets.getPlanetsAmount().ToString();
-
-            labelRacesAmount.Text = listOfRaces.getRacesAmount().ToString();
-
-
-
-
-
+            labelPlanetsNumber.Text = listOfPlanets.getPlanetsAmount().ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -78,11 +71,11 @@ namespace ArturSmolnikLab1
 
         }
 
-        private void addPlanet_Click(object sender, EventArgs e)
-        {
+        //private void addPlanet_Click(object sender, EventArgs e)
+        //{
 
-            conquerredPlanets.addNewPlanet(new Planet());
-        }
+        //    listOfPlanets.addNewPlanet(new Planet());
+        //}
 
         private void techLevel_Click(object sender, EventArgs e)
         {
@@ -96,7 +89,7 @@ namespace ArturSmolnikLab1
 
         private void buttonAddRace_Click(object sender, EventArgs e)
         {
-            listOfRaces.AddNewRace();
+            listOfPlanets.getCurrentPlanet().AddOneNewRaceToPlanet();
         }
     }
 }

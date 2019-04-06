@@ -138,7 +138,7 @@
             this.buttonAddPlanet.TabIndex = 6;
             this.buttonAddPlanet.Text = "buttonAddPlanet";
             this.buttonAddPlanet.UseVisualStyleBackColor = true;
-            this.buttonAddPlanet.Click += new System.EventHandler(this.addPlanet_Click);
+            //this.buttonAddPlanet.Click += new System.EventHandler(this.addPlanet_Click);
             // 
             // buttonAddRace
             // 

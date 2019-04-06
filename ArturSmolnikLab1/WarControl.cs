@@ -6,25 +6,25 @@ using System.Threading.Tasks;
 
 namespace ArturSmolnikLab1
 {
-    class Colonisation
+    class WarControl
     {
         private ListOfPlanets listOfPlanets;
+        private Planet planet;
         private Random random;
 
-        public Colonisation(ListOfPlanets listOfPlanets)
+        public WarControl(ListOfPlanets listOfPlanets)
         {
             this.listOfPlanets = listOfPlanets;
             random = new Random();
         }
 
-
-        public bool tryToColonize()
+        public bool tryToStartWar()
         {
-            if (listOfPlanets.getCurrentPlanet().CheckIfDensityTooHigh())
+            if (listOfPlanets.getCurrentPlanet().CheckIfDensityTooHigh() && listOfPlanets.getCurrentPlanet().GetAmountfRaces() > 2)
             {
-                if (random.Next(0, 30) == 0)
+                if (random.Next(0, 40) == 0)
                 {
-                    listOfPlanets.AddNewPlanet();
+                    listOfPlanets.getCurrentPlanet().RemoveOneRaceFromPlanet();
                     return true;
                 }
             }
