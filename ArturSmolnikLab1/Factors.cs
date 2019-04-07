@@ -36,12 +36,12 @@ namespace ArturSmolnikLab1
         /// Returns number of whole population of all planets
         /// </summary>
         /// <returns>double</returns>
-        public double GetPopulation()
+        public double getPopulation()
         {
             double Population = 0;
             for (int i = 0; i<listOfPlanets.getPlanetsAmount(); i++)
             {
-                Population += listOfPlanets.getCurrentPlanet().GetInhabitants();   
+                Population += listOfPlanets.getCurrentPlanet().getInhabitants();   
             }
             return Population;
         }
@@ -68,7 +68,7 @@ namespace ArturSmolnikLab1
        /// </summary>
         public void ModifyInhabitantsByAddition()
         {
-            listOfPlanets.getCurrentPlanet().SetInhabitants(Math.Floor(listOfPlanets.getCurrentPlanet().GetInhabitants() + PopulationAddition));
+            listOfPlanets.getCurrentPlanet().SetInhabitants(Math.Floor(listOfPlanets.getCurrentPlanet().getInhabitants() + PopulationAddition));
         }
 
 

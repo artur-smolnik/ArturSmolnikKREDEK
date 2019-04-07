@@ -29,7 +29,7 @@ namespace ArturSmolnikLab1
         /// Returns number of planet's inhabitants
         /// </summary>
         /// <returns>double</returns>
-        public double GetInhabitants()
+        public double getInhabitants()
         {
             return Inhabitants;
         }
@@ -38,7 +38,7 @@ namespace ArturSmolnikLab1
         /// Returns planet's population density 
         /// </summary>
         /// <returns>int</returns>
-        public int  GetDensity()
+        public int  getDensity()
         {
             return (int)Math.Floor(Inhabitants / Area);
         }
@@ -47,7 +47,7 @@ namespace ArturSmolnikLab1
         /// Returns the number of races living in a given planet
         /// </summary>
         /// <returns>int</returns>
-        public int GetAmountfRaces()
+        public int getAmountfRaces()
         {
             return AmountOfRaces;
         }
@@ -56,7 +56,7 @@ namespace ArturSmolnikLab1
         /// Returns planet's area
         /// </summary>
         /// <returns>double</returns>
-        public double GetArea()
+        public double getArea()
         {
             return Area;
         }
@@ -67,7 +67,7 @@ namespace ArturSmolnikLab1
         /// <returns>bool</returns>
         public bool CheckIfDensityTooHigh()
         {
-            if (GetDensity() > 10) return true;
+            if (getDensity() > 10) return true;
             else return false;
         }
 

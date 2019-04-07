@@ -34,7 +34,7 @@ namespace ArturSmolnikLab1
             {
                 for(int i =0; i < listOfPlanets.getPlanetsAmount(); i++)
                 {                    
-                    listOfPlanets.getCurrentPlanet().SetInhabitants((((double)random.Next(0, 10)) / (double)10) * listOfPlanets.getCurrentPlanet().GetInhabitants());
+                    listOfPlanets.getCurrentPlanet().SetInhabitants((((double)random.Next(0, 10)) / (double)10) * listOfPlanets.getCurrentPlanet().getInhabitants());
                 }
                 factors.ModifyTechLevelByAddition(-2000);
                 return true;

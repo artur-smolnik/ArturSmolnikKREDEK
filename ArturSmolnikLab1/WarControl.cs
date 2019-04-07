@@ -26,9 +26,9 @@ namespace ArturSmolnikLab1
         /// Returns bool if war took place
         /// </summary>
         /// <returns>bool</returns>
-        public bool tryToStartWar()
+        public bool TryToStartWar()
         {
-            if (listOfPlanets.getCurrentPlanet().CheckIfDensityTooHigh() && listOfPlanets.getCurrentPlanet().GetAmountfRaces() > 2)
+            if (listOfPlanets.getCurrentPlanet().CheckIfDensityTooHigh() && listOfPlanets.getCurrentPlanet().getAmountfRaces() > 2)
             {
                 if (random.Next(0, 4) == 0)
                 {

@@ -33,16 +33,16 @@ namespace ArturSmolnikLab1
             factors.ModifyInhabitantsByAddition();
 
             //functions below are responsible for gui and displaying stats
-            labelPopulationNumber.Text = factors.GetPopulation().ToString();
-            labelInhabitants.Text = listOfPlanets.getCurrentPlanet().GetInhabitants().ToString();
+            labelPopulationNumber.Text = factors.getPopulation().ToString();
+            labelInhabitants.Text = listOfPlanets.getCurrentPlanet().getInhabitants().ToString();
             labelPlanetsNumber.Text = listOfPlanets.getPlanetsAmount().ToString();
             labelTechLevel.Text = factors.getTechLevel().ToString();
-            labelRacesAmount.Text = listOfPlanets.getCurrentPlanet().GetAmountfRaces().ToString();
-            labelDensity.Text = listOfPlanets.getCurrentPlanet().GetDensity().ToString();
-            raceControl.tryTooCreateNewRace();
+            labelRacesAmount.Text = listOfPlanets.getCurrentPlanet().getAmountfRaces().ToString();
+            labelDensity.Text = listOfPlanets.getCurrentPlanet().getDensity().ToString();
+            raceControl.TryTooCreateNewRace();
 
             //If war occurs, then picture changes 
-            if (warControl.tryToStartWar())
+            if (warControl.TryToStartWar())
             {
                 pictureBox.Image = Properties.Resources.battle;
                 labelWorldEvent.Text = "IT'S WAR TIME!";

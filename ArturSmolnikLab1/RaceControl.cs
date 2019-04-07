@@ -26,7 +26,7 @@ namespace ArturSmolnikLab1
         /// Function tries to add new race to planet when density reaches proper level and returns true when succed
         /// </summary>
         /// <returns>bool</returns>
-        public bool tryTooCreateNewRace()
+        public bool TryTooCreateNewRace()
         {
             if(listOfPlanets.getCurrentPlanet().CheckIfDensityTooHigh())
             {
