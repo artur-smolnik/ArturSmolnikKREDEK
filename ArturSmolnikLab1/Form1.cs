@@ -17,7 +17,7 @@ namespace ArturSmolnikLab1
         public Form1()
         {
             InitializeComponent();
-
+            this.Text = "SPACE CONQUER";
             listOfPlanets = new ListOfPlanets();
             factors = new Factors(listOfPlanets);
             raceControl = new RaceControl(listOfPlanets, factors);
@@ -26,40 +26,41 @@ namespace ArturSmolnikLab1
             disaster = new Disaster(listOfPlanets, factors);
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timerMainTimer(object sender, EventArgs e)
         {
-
-            factors.ModifyTechLevelByAddition(100);
+            //two functions below modify inhabitants number and techlevel
+            factors.ModifyTechLevelByAddition(50);
             factors.ModifyInhabitantsByAddition();
 
+            //functions below are responsible for gui and displaying stats
             labelPopulationNumber.Text = factors.GetPopulation().ToString();
-            labelInhabitants.Text = listOfPlanets.GetCurrentPlanet().GetInhabitants().ToString();
-            labelPlanetsNumber.Text = listOfPlanets.GetPlanetsAmount().ToString();
-            labelTechLevel.Text = factors.GetTechLevel().ToString();
-            labelRacesAmount.Text = listOfPlanets.GetCurrentPlanet().GetAmountfRaces().ToString();
-            labelDensity.Text = listOfPlanets.GetCurrentPlanet().GetDensity().ToString();
+            labelInhabitants.Text = listOfPlanets.getCurrentPlanet().GetInhabitants().ToString();
+            labelPlanetsNumber.Text = listOfPlanets.getPlanetsAmount().ToString();
+            labelTechLevel.Text = factors.getTechLevel().ToString();
+            labelRacesAmount.Text = listOfPlanets.getCurrentPlanet().GetAmountfRaces().ToString();
+            labelDensity.Text = listOfPlanets.getCurrentPlanet().GetDensity().ToString();
             raceControl.tryTooCreateNewRace();
 
-
+            //If war occurs, then picture changes 
             if (warControl.tryToStartWar())
             {
                 pictureBox.Image = Properties.Resources.battle;
                 labelWorldEvent.Text = "IT'S WAR TIME!";
             }
 
+            //If colonisation occurs, then picture changes 
             if (colonisation.tryToColonize())
             {
                 pictureBox.Image = Properties.Resources.colonisation;
                 labelWorldEvent.Text = "IT'S COLONISATION TIME!";
             }
 
+            //If famine occurs, then picture changes 
             if (disaster.Famine())
             {
                 pictureBox.Image = Properties.Resources.famine;
                 labelWorldEvent.Text = "IT'S FAMINE TIME!";
-            }
-            
-            
+            }   
 
 
             

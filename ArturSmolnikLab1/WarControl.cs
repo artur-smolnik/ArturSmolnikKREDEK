@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ArturSmolnikLab1
 {
+    /// <summary>
+    /// Provides function which simulates 
+    /// </summary>
     class WarControl
     {
         private ListOfPlanets listOfPlanets;
@@ -17,13 +20,19 @@ namespace ArturSmolnikLab1
             random = new Random();
         }
 
+        /// <summary>
+        /// Function's trying to start resulting in removing one race from the planet
+        /// The execution condition is proper density higher than 10 and proper amount of races
+        /// Returns bool if war took place
+        /// </summary>
+        /// <returns>bool</returns>
         public bool tryToStartWar()
         {
-            if (listOfPlanets.GetCurrentPlanet().CheckIfDensityTooHigh() && listOfPlanets.GetCurrentPlanet().GetAmountfRaces() > 2)
+            if (listOfPlanets.getCurrentPlanet().CheckIfDensityTooHigh() && listOfPlanets.getCurrentPlanet().GetAmountfRaces() > 2)
             {
                 if (random.Next(0, 4) == 0)
                 {
-                    listOfPlanets.GetCurrentPlanet().RemoveOneRaceFromPlanet();
+                    listOfPlanets.getCurrentPlanet().RemoveOneRaceFromPlanet();
                     return true;
                 }
             }

@@ -24,7 +24,7 @@ namespace ArturSmolnikLab1
         /// Returns numer of conquerred planets
         /// </summary>
         /// <returns>int</returns>
-        public int GetPlanetsAmount()
+        public int getPlanetsAmount()
         {
             return listOfPlanets.Count;
         }
@@ -32,7 +32,7 @@ namespace ArturSmolnikLab1
         /// Returns last  conquerred planet
         /// </summary>
         /// <returns>Planet</returns>
-        public Planet GetCurrentPlanet()
+        public Planet getCurrentPlanet()
         {            
             return listOfPlanets[listOfPlanets.Count - 1];
         }

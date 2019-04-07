@@ -20,6 +20,7 @@ namespace ArturSmolnikLab1
         /// Global parameter 
         /// </summary>
         private double TechLevel;
+
         private ListOfPlanets listOfPlanets;
         
 
@@ -38,9 +39,9 @@ namespace ArturSmolnikLab1
         public double GetPopulation()
         {
             double Population = 0;
-            for (int i = 0; i<listOfPlanets.GetPlanetsAmount(); i++)
+            for (int i = 0; i<listOfPlanets.getPlanetsAmount(); i++)
             {
-                Population += listOfPlanets.GetCurrentPlanet().GetInhabitants();   
+                Population += listOfPlanets.getCurrentPlanet().GetInhabitants();   
             }
             return Population;
         }
@@ -49,7 +50,8 @@ namespace ArturSmolnikLab1
         /// Returns current TechLevel
         /// </summary>
         /// <returns>double</returns>
-        public double GetTechLevel() { return TechLevel; }       
+        public double getTechLevel() { return TechLevel; }       
+
 
         /// <summary>
         /// Function modifies TechLevel by given parameter
@@ -66,11 +68,9 @@ namespace ArturSmolnikLab1
        /// </summary>
         public void ModifyInhabitantsByAddition()
         {
-            listOfPlanets.GetCurrentPlanet().SetInhabitants(Math.Floor(listOfPlanets.GetCurrentPlanet().GetInhabitants() + PopulationAddition));
+            listOfPlanets.getCurrentPlanet().SetInhabitants(Math.Floor(listOfPlanets.getCurrentPlanet().GetInhabitants() + PopulationAddition));
         }
 
-
-        //----------------------------------------------------------------setters
 
        /// <summary>
        /// Function set how fast amount of inhabitants grows
@@ -95,7 +95,7 @@ namespace ArturSmolnikLab1
         /// </summary>
         public void SlowDown()
         {
-            PopulationAddition -= 1000;
+            if(PopulationAddition >=1000) PopulationAddition -= 1000;
         }
     }
 }

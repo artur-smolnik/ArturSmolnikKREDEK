@@ -30,11 +30,11 @@ namespace ArturSmolnikLab1
         /// <returns>bool</returns>
         public bool Famine()
         {
-            if (random.Next(0, 3) == 0 && listOfPlanets.GetPlanetsAmount()>5)
+            if (random.Next(0, 80) == 0 && listOfPlanets.getPlanetsAmount()>4)
             {
-                for(int i =0; i < listOfPlanets.GetPlanetsAmount(); i++)
+                for(int i =0; i < listOfPlanets.getPlanetsAmount(); i++)
                 {                    
-                    listOfPlanets.GetCurrentPlanet().SetInhabitants((((double)random.Next(0, 10)) / (double)10) * listOfPlanets.GetCurrentPlanet().GetInhabitants());
+                    listOfPlanets.getCurrentPlanet().SetInhabitants((((double)random.Next(0, 10)) / (double)10) * listOfPlanets.getCurrentPlanet().GetInhabitants());
                 }
                 factors.ModifyTechLevelByAddition(-2000);
                 return true;

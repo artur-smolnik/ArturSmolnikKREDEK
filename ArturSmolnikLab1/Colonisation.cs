@@ -28,12 +28,12 @@ namespace ArturSmolnikLab1
         /// <returns>bool</returns>
         public bool tryToColonize()
         {
-            if (listOfPlanets.GetCurrentPlanet().CheckIfDensityTooHigh())
+            if (listOfPlanets.getCurrentPlanet().CheckIfDensityTooHigh())
             {
-                if (factors.GetTechLevel() > 3000) { 
-                    if (random.Next(0, 30) == 0)
+                if (factors.getTechLevel() > 3000) { 
+                    if (random.Next(0, 25) == 0)
                     {
-                        factors.ModifyTechLevelByAddition(-300);
+                        factors.ModifyTechLevelByAddition(-3000);
                         listOfPlanets.AddNewPlanet();
                         return true;
                     }

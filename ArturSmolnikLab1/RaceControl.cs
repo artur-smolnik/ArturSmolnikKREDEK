@@ -12,14 +12,14 @@ namespace ArturSmolnikLab1
     class RaceControl
     {
         private ListOfPlanets listOfPlanets;
-        private Random random;
+        private Random Random;
         private Factors factors;
 
         public RaceControl(ListOfPlanets listOfPlanets, Factors factors)
         {
             this.listOfPlanets = listOfPlanets;
             this.factors = factors;
-            random = new Random();
+            Random = new Random();
         }
 
         /// <summary>
@@ -28,11 +28,11 @@ namespace ArturSmolnikLab1
         /// <returns>bool</returns>
         public bool tryTooCreateNewRace()
         {
-            if(listOfPlanets.GetCurrentPlanet().CheckIfDensityTooHigh())
+            if(listOfPlanets.getCurrentPlanet().CheckIfDensityTooHigh())
             {
-                if(random.Next(0,3)==0)
+                if(Random.Next(0,3)==0)
                 {
-                    listOfPlanets.GetCurrentPlanet().AddOneNewRaceToPlanet();
+                    listOfPlanets.getCurrentPlanet().AddOneNewRaceToPlanet();
 
                     factors.ModifyTechLevelByAddition(100);
                     
