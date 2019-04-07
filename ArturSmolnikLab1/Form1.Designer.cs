@@ -37,8 +37,6 @@
             this.labelPlanetsNumber = new System.Windows.Forms.Label();
             this.labelTechLevelInfo = new System.Windows.Forms.Label();
             this.labelTechLevel = new System.Windows.Forms.Label();
-            this.buttonAddPlanet = new System.Windows.Forms.Button();
-            this.buttonAddRace = new System.Windows.Forms.Button();
             this.labelRacesAmount = new System.Windows.Forms.Label();
             this.labelRacesAmountInfo = new System.Windows.Forms.Label();
             this.labelCurrentPlanetInfo = new System.Windows.Forms.Label();
@@ -46,6 +44,8 @@
             this.labelInhabitants = new System.Windows.Forms.Label();
             this.labelDensityInfo = new System.Windows.Forms.Label();
             this.labelDensity = new System.Windows.Forms.Label();
+            this.buttonSpeedUp = new System.Windows.Forms.Button();
+            this.buttonSlowDown = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timerMainWorldTimer
@@ -66,7 +66,7 @@
             // 
             // buttonTestButton
             // 
-            this.buttonTestButton.Location = new System.Drawing.Point(270, 36);
+            this.buttonTestButton.Location = new System.Drawing.Point(285, 30);
             this.buttonTestButton.Name = "buttonTestButton";
             this.buttonTestButton.Size = new System.Drawing.Size(165, 23);
             this.buttonTestButton.TabIndex = 2;
@@ -134,26 +134,6 @@
             this.labelTechLevel.Text = "0";
             this.labelTechLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelTechLevel.Click += new System.EventHandler(this.techLevel_Click);
-            // 
-            // buttonAddPlanet
-            // 
-            this.buttonAddPlanet.Location = new System.Drawing.Point(270, 65);
-            this.buttonAddPlanet.Name = "buttonAddPlanet";
-            this.buttonAddPlanet.Size = new System.Drawing.Size(165, 23);
-            this.buttonAddPlanet.TabIndex = 6;
-            this.buttonAddPlanet.Text = "buttonAddPlanet";
-            this.buttonAddPlanet.UseVisualStyleBackColor = true;
-            this.buttonAddPlanet.Click += new System.EventHandler(this.buttonAddPlanet_Click);
-            // 
-            // buttonAddRace
-            // 
-            this.buttonAddRace.Location = new System.Drawing.Point(270, 94);
-            this.buttonAddRace.Name = "buttonAddRace";
-            this.buttonAddRace.Size = new System.Drawing.Size(165, 23);
-            this.buttonAddRace.TabIndex = 7;
-            this.buttonAddRace.Text = "addRace";
-            this.buttonAddRace.UseVisualStyleBackColor = true;
-            this.buttonAddRace.Click += new System.EventHandler(this.buttonAddRace_Click);
             // 
             // labelRacesAmount
             // 
@@ -235,11 +215,33 @@
             this.labelDensity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelDensity.Click += new System.EventHandler(this.labelDensity_Click);
             // 
+            // buttonSpeedUp
+            // 
+            this.buttonSpeedUp.Location = new System.Drawing.Point(285, 65);
+            this.buttonSpeedUp.Name = "buttonSpeedUp";
+            this.buttonSpeedUp.Size = new System.Drawing.Size(105, 23);
+            this.buttonSpeedUp.TabIndex = 15;
+            this.buttonSpeedUp.Text = "SpeedUp";
+            this.buttonSpeedUp.UseVisualStyleBackColor = true;
+            this.buttonSpeedUp.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonSlowDown
+            // 
+            this.buttonSlowDown.Location = new System.Drawing.Point(285, 94);
+            this.buttonSlowDown.Name = "buttonSlowDown";
+            this.buttonSlowDown.Size = new System.Drawing.Size(75, 23);
+            this.buttonSlowDown.TabIndex = 16;
+            this.buttonSlowDown.Text = "Slow down";
+            this.buttonSlowDown.UseVisualStyleBackColor = true;
+            this.buttonSlowDown.Click += new System.EventHandler(this.buttonSlowDown_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 553);
+            this.Controls.Add(this.buttonSlowDown);
+            this.Controls.Add(this.buttonSpeedUp);
             this.Controls.Add(this.labelDensity);
             this.Controls.Add(this.labelDensityInfo);
             this.Controls.Add(this.labelInhabitants);
@@ -247,8 +249,6 @@
             this.Controls.Add(this.labelCurrentPlanetInfo);
             this.Controls.Add(this.labelRacesAmountInfo);
             this.Controls.Add(this.labelRacesAmount);
-            this.Controls.Add(this.buttonAddRace);
-            this.Controls.Add(this.buttonAddPlanet);
             this.Controls.Add(this.labelTechLevel);
             this.Controls.Add(this.labelPlanetsNumber);
             this.Controls.Add(this.labelTechLevelInfo);
@@ -274,8 +274,6 @@
         private System.Windows.Forms.Label labelPlanetsNumber;
         private System.Windows.Forms.Label labelTechLevelInfo;
         private System.Windows.Forms.Label labelTechLevel;
-        private System.Windows.Forms.Button buttonAddPlanet;
-        private System.Windows.Forms.Button buttonAddRace;
         private System.Windows.Forms.Label labelRacesAmount;
         private System.Windows.Forms.Label labelRacesAmountInfo;
         private System.Windows.Forms.Label labelCurrentPlanetInfo;
@@ -283,6 +281,8 @@
         private System.Windows.Forms.Label labelInhabitants;
         private System.Windows.Forms.Label labelDensityInfo;
         private System.Windows.Forms.Label labelDensity;
+        private System.Windows.Forms.Button buttonSpeedUp;
+        private System.Windows.Forms.Button buttonSlowDown;
     }
 }
 

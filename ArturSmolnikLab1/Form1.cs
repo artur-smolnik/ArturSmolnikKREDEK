@@ -34,11 +34,12 @@ namespace ArturSmolnikLab1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            factors.ModifyTechLevelByAddition(1);
-            listOfPlanets.getCurrentPlanet().ModifyPopulationByAddition(50000);
+
+            factors.ModifyTechLevelByAddition(100);
+            factors.ModifyPopulationByAddition();
 
             labelPopulationNumber.Text = factors.GetPopulation().ToString();
-            labelInhabitants.Text = listOfPlanets.getCurrentPlanet().getInhabitants().ToString();
+            labelInhabitants.Text = listOfPlanets.getCurrentPlanet().GetInhabitants().ToString();
             labelPlanetsNumber.Text = listOfPlanets.getPlanetsAmount().ToString();
             labelTechLevel.Text = factors.GetTechLevel().ToString();
             labelRacesAmount.Text = listOfPlanets.getCurrentPlanet().GetAmountfRaces().ToString();
@@ -104,16 +105,8 @@ namespace ArturSmolnikLab1
 
         }
 
-        private void buttonAddRace_Click(object sender, EventArgs e)
-        {
-            listOfPlanets.getCurrentPlanet().AddOneNewRaceToPlanet();
-        }
-
-        private void buttonAddPlanet_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
+       
         private void labelRacesAmountInfo_Click(object sender, EventArgs e)
         {
 
@@ -122,6 +115,16 @@ namespace ArturSmolnikLab1
         private void labelDensity_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            factors.SpeedUp();
+        }
+
+        private void buttonSlowDown_Click(object sender, EventArgs e)
+        {
+            factors.SlowDown();
         }
     }
 }

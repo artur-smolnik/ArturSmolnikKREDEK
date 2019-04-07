@@ -12,6 +12,7 @@ namespace ArturSmolnikLab1
         private int AmountOfRaces;
         private double Area;
         private double Inhabitants;
+       
 
 
         public Planet()
@@ -19,11 +20,12 @@ namespace ArturSmolnikLab1
             random = new Random();
             AmountOfRaces = 1;
             Area = random.Next(100000, 214745);
-            Inhabitants = random.Next(random.Next(123450, 234560), random.Next(1000000, 2000000));
-
+            Inhabitants = random.Next(random.Next(123450, 234560), random.Next(1000000, 2000000));            
 
         }
-        public double getInhabitants()
+
+        //---------------------------------------------------getters
+        public double GetInhabitants()
         {
             return Inhabitants;
         }
@@ -33,39 +35,64 @@ namespace ArturSmolnikLab1
             return (int)Math.Floor(Inhabitants / Area);
         }
 
+        public int GetAmountfRaces()
+        {
+            return AmountOfRaces;
+        }
+
+        public double GetArea()
+        {
+            return Area;
+        }
+        //--------------------------------------------------------------------
         public bool CheckIfDensityTooHigh()
         {
             if (GetDensity() > 10) return true;
             else return false;
         }
 
-        public int GetAmountfRaces()
+        public void SetInhabitants(double newInhabitants)
         {
-            return AmountOfRaces;
+            Inhabitants = newInhabitants;
         }
 
         public void AddOneNewRaceToPlanet()
         {
             AmountOfRaces++;
-        }
-        public double GetArea()
-        {
-            return Area;
-        }
+        }        
 
         public void RemoveOneRaceFromPlanet()
         {
             AmountOfRaces--;
         }
 
-        public void ModifyPopulationByMultiplying(double multiplier)
-        {
-            Inhabitants += Math.Floor(Inhabitants * multiplier);
-        }
+        //public void setMultiplier(double multiplier)
+        //{
+        //    PopulationMultiplier = multiplier;
+        //}
 
-        public void ModifyPopulationByAddition(double addition)
-        {
-            Inhabitants += addition;
-        }
+        //public void setAddition(double addition)
+        //{
+        //    PopulationAddition = addition;
+        //}
+
+        //public void setSubtraction(double subtraction)
+        //{
+        //    PopulationSubtraction = subtraction;
+        //}
+
+        //public void ModifyPopulationByMultiplying()
+        //{
+        //    Inhabitants += Math.Floor(Inhabitants * PopulationMultiplier);
+        //}
+
+        //public void ModifyPopulationByAddition()
+        //{
+        //    Inhabitants += PopulationAddition;
+        //}
+
+        
+
+        
     } 
 }
