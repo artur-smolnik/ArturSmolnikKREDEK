@@ -15,9 +15,10 @@ namespace ArturSmolnikLab1
         private Random random;
         private ListOfPlanets listOfPlanets;
         private Factors factors;
-        public Disaster(ListOfPlanets listOfPlanets)
+        public Disaster(ListOfPlanets listOfPlanets, Factors factors)
         {
             random = new Random();
+            this.factors = factors;
             this.listOfPlanets = listOfPlanets;
         }
 
@@ -32,10 +33,11 @@ namespace ArturSmolnikLab1
             if (random.Next(0, 3) == 0 && listOfPlanets.GetPlanetsAmount()>5)
             {
                 for(int i =0; i < listOfPlanets.GetPlanetsAmount(); i++)
-                {
-                    factors.ModifyTechLevelByAddition(-3000);
+                {                    
                     listOfPlanets.GetCurrentPlanet().SetInhabitants((((double)random.Next(0, 10)) / (double)10) * listOfPlanets.GetCurrentPlanet().GetInhabitants());
                 }
+                factors.ModifyTechLevelByAddition(-2000);
+                return true;
             }
 
             return false;

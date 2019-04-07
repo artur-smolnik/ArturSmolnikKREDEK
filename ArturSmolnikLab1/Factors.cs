@@ -11,7 +11,14 @@ namespace ArturSmolnikLab1
     /// </summary>
     class Factors
     {
+        /// <summary>
+        /// Inhabitants growth per one cycle
+        /// </summary>
         private double PopulationAddition;
+
+        /// <summary>
+        /// Global parameter 
+        /// </summary>
         private double TechLevel;
         private ListOfPlanets listOfPlanets;
         
@@ -44,12 +51,15 @@ namespace ArturSmolnikLab1
         /// <returns>double</returns>
         public double GetTechLevel() { return TechLevel; }       
 
+        /// <summary>
+        /// Function modifies TechLevel by given parameter
+        /// </summary>
+        /// <param name="addition"></param>
         public void ModifyTechLevelByAddition(double addition)
         {
             TechLevel += addition;
         }
 
-        //------------------------------------------------------------------------------population 
 
        /// <summary>
        /// Function changes current amount of inhabitants by given addition factor

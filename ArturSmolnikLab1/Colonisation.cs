@@ -30,10 +30,10 @@ namespace ArturSmolnikLab1
         {
             if (listOfPlanets.GetCurrentPlanet().CheckIfDensityTooHigh())
             {
-                if (factors.GetTechLevel() >3000) { 
+                if (factors.GetTechLevel() > 3000) { 
                     if (random.Next(0, 30) == 0)
                     {
-                        factors.ModifyTechLevelByAddition(-3000);
+                        factors.ModifyTechLevelByAddition(-300);
                         listOfPlanets.AddNewPlanet();
                         return true;
                     }

@@ -23,7 +23,7 @@ namespace ArturSmolnikLab1
             raceControl = new RaceControl(listOfPlanets, factors);
             warControl = new WarControl(listOfPlanets);
             colonisation = new Colonisation(listOfPlanets, factors);
-            disaster = new Disaster(listOfPlanets);
+            disaster = new Disaster(listOfPlanets, factors);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -39,9 +39,26 @@ namespace ArturSmolnikLab1
             labelRacesAmount.Text = listOfPlanets.GetCurrentPlanet().GetAmountfRaces().ToString();
             labelDensity.Text = listOfPlanets.GetCurrentPlanet().GetDensity().ToString();
             raceControl.tryTooCreateNewRace();
-            warControl.tryToStartWar();
-            colonisation.tryToColonize();
-            disaster.Famine();
+
+
+            if (warControl.tryToStartWar())
+            {
+                pictureBox.Image = Properties.Resources.battle;
+                labelWorldEvent.Text = "IT'S WAR TIME!";
+            }
+
+            if (colonisation.tryToColonize())
+            {
+                pictureBox.Image = Properties.Resources.colonisation;
+                labelWorldEvent.Text = "IT'S COLONISATION TIME!";
+            }
+
+            if (disaster.Famine())
+            {
+                pictureBox.Image = Properties.Resources.famine;
+                labelWorldEvent.Text = "IT'S FAMINE TIME!";
+            }
+            
             
 
 
@@ -79,6 +96,16 @@ namespace ArturSmolnikLab1
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelWorldEvent_Click(object sender, EventArgs e)
         {
 
         }
