@@ -19,11 +19,11 @@ namespace ArturSmolnikLab1
 
         public bool tryToStartWar()
         {
-            if (listOfPlanets.getCurrentPlanet().CheckIfDensityTooHigh() && listOfPlanets.getCurrentPlanet().GetAmountfRaces() > 2)
+            if (listOfPlanets.GetCurrentPlanet().CheckIfDensityTooHigh() && listOfPlanets.GetCurrentPlanet().GetAmountfRaces() > 2)
             {
                 if (random.Next(0, 4) == 0)
                 {
-                    listOfPlanets.getCurrentPlanet().RemoveOneRaceFromPlanet();
+                    listOfPlanets.GetCurrentPlanet().RemoveOneRaceFromPlanet();
                     return true;
                 }
             }

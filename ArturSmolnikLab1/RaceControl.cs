@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ArturSmolnikLab1
 {
+    /// <summary>
+    /// Class provides function adding new races to planet
+    /// </summary>
     class RaceControl
     {
         private ListOfPlanets listOfPlanets;
@@ -19,13 +22,17 @@ namespace ArturSmolnikLab1
             random = new Random();
         }
 
+        /// <summary>
+        /// Function tries to add new race to planet when density reaches proper level and returns true when succed
+        /// </summary>
+        /// <returns>bool</returns>
         public bool tryTooCreateNewRace()
         {
-            if(listOfPlanets.getCurrentPlanet().CheckIfDensityTooHigh())
+            if(listOfPlanets.GetCurrentPlanet().CheckIfDensityTooHigh())
             {
                 if(random.Next(0,3)==0)
                 {
-                    listOfPlanets.getCurrentPlanet().AddOneNewRaceToPlanet();
+                    listOfPlanets.GetCurrentPlanet().AddOneNewRaceToPlanet();
 
                     factors.ModifyTechLevelByAddition(100);
                     

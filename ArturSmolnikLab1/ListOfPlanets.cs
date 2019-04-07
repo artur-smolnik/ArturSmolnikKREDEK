@@ -6,28 +6,39 @@ using System.Threading.Tasks;
 
 namespace ArturSmolnikLab1
 {
+    /// <summary>
+    /// This class is in charge of conqurred planets 
+    /// </summary>
     class ListOfPlanets
     {
         private static List<Planet> listOfPlanets;
         private Random random;
-
+   
         public ListOfPlanets()
-        {
+        {            
             listOfPlanets  = new List<Planet>();
             listOfPlanets.Add(new Planet());
             random = new Random();
         }
-
-        public int getPlanetsAmount()
+        /// <summary>
+        /// Returns numer of conquerred planets
+        /// </summary>
+        /// <returns>int</returns>
+        public int GetPlanetsAmount()
         {
             return listOfPlanets.Count;
         }
-
-        public Planet getCurrentPlanet()
+        /// <summary>
+        /// Returns last  conquerred planet
+        /// </summary>
+        /// <returns>Planet</returns>
+        public Planet GetCurrentPlanet()
         {            
             return listOfPlanets[listOfPlanets.Count - 1];
         }
-
+        /// <summary>
+        /// Adds new planet to list
+        /// </summary>
         public void AddNewPlanet()
         {
             listOfPlanets.Add(new Planet());

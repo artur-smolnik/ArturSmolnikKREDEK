@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ArturSmolnikLab1
 {
+    /// <summary>
+    /// Class provides colonisation aspect
+    /// </summary>
     class Colonisation
     {
         private ListOfPlanets listOfPlanets;
@@ -19,15 +22,18 @@ namespace ArturSmolnikLab1
             random = new Random();
         }
 
-
+        /// <summary>
+        /// The function adds another planet to list when density gains proper level
+        /// </summary>
+        /// <returns>bool</returns>
         public bool tryToColonize()
         {
-            if (listOfPlanets.getCurrentPlanet().CheckIfDensityTooHigh())
+            if (listOfPlanets.GetCurrentPlanet().CheckIfDensityTooHigh())
             {
                 if (factors.GetTechLevel() >3000) { 
                     if (random.Next(0, 30) == 0)
                     {
-                        factors.ModifyTechLevelBySubtraction(3000);
+                        factors.ModifyTechLevelByAddition(-3000);
                         listOfPlanets.AddNewPlanet();
                         return true;
                     }

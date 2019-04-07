@@ -6,46 +6,43 @@ using System.Threading.Tasks;
 
 namespace ArturSmolnikLab1
 {
+    /// <summary>
+    /// This class provides support for populationNumber and TechLevel
+    /// </summary>
     class Factors
     {
-        
+        private double PopulationAddition;
         private double TechLevel;
         private ListOfPlanets listOfPlanets;
-        private double PopulationMultiplier;
-        private double PopulationAddition;
-        private double PopulationSubtraction;
+        
 
 
         public Factors(ListOfPlanets listOfPlanets)
         {
 
             this.listOfPlanets = listOfPlanets;
-            PopulationMultiplier = 1.0005;
             PopulationAddition = 20000;
-            PopulationSubtraction = 0;
-        }        
+        }
 
+        /// <summary>
+        /// Returns number of whole population of all planets
+        /// </summary>
+        /// <returns>double</returns>
         public double GetPopulation()
         {
             double Population = 0;
-            for (int i = 0; i<listOfPlanets.getPlanetsAmount(); i++)
+            for (int i = 0; i<listOfPlanets.GetPlanetsAmount(); i++)
             {
-                Population += listOfPlanets.getCurrentPlanet().GetInhabitants();   
+                Population += listOfPlanets.GetCurrentPlanet().GetInhabitants();   
             }
             return Population;
         }
 
-        public double GetTechLevel() { return TechLevel; }
-
-        public void ModifyTechLevelBySubtraction(double subtraction)
-        {
-            TechLevel -=subtraction;
-        }
-
-        public void ModifyTechLevelByMultiplying(double multiplier)
-        {
-            TechLevel += Math.Floor(TechLevel * multiplier);
-        }
+        /// <summary>
+        /// Returns current TechLevel
+        /// </summary>
+        /// <returns>double</returns>
+        public double GetTechLevel() { return TechLevel; }       
 
         public void ModifyTechLevelByAddition(double addition)
         {
@@ -54,44 +51,38 @@ namespace ArturSmolnikLab1
 
         //------------------------------------------------------------------------------population 
 
-        public void ModifyPopulationByMultiplying()
+       /// <summary>
+       /// Function changes current amount of inhabitants by given addition factor
+       /// </summary>
+        public void ModifyInhabitantsByAddition()
         {
-            listOfPlanets.getCurrentPlanet().SetInhabitants(Math.Floor(listOfPlanets.getCurrentPlanet().GetInhabitants() * PopulationMultiplier));
+            listOfPlanets.GetCurrentPlanet().SetInhabitants(Math.Floor(listOfPlanets.GetCurrentPlanet().GetInhabitants() + PopulationAddition));
         }
 
-
-        public void ModifyPopulationByAddition()
-        {
-            listOfPlanets.getCurrentPlanet().SetInhabitants(Math.Floor(listOfPlanets.getCurrentPlanet().GetInhabitants() + PopulationAddition));
-        }
-
-        public void ModifyPopulationBySubtraction()
-        {
-            listOfPlanets.getCurrentPlanet().SetInhabitants(Math.Floor(listOfPlanets.getCurrentPlanet().GetInhabitants() - PopulationSubtraction));
-        }
 
         //----------------------------------------------------------------setters
 
-        public void setPopulationMultiplier(double multiplier)
-        {
-            PopulationMultiplier = multiplier;
-        }
-
+       /// <summary>
+       /// Function set how fast amount of inhabitants grows
+       /// </summary>
+       /// <param name="addition"></param>
         public void setPopulationAddition(double addition)
         {
             PopulationAddition = addition;
         }
 
-        public void setPopulationSubtraction(double subtraction)
-        {
-            PopulationSubtraction = subtraction;
-        }
-
+        /// <summary>
+        /// Function used by button SpeedUp,
+        /// clicking results in incresing inhabitants growth per one cycle
+        /// </summary>
         public void SpeedUp()
         {
             PopulationAddition += 1000;
         }
-
+        /// <summary>
+        /// Function used by button SlowDowno,
+        /// clicking results in decreasing inhabitants drop per one cycle
+        /// </summary>
         public void SlowDown()
         {
             PopulationAddition -= 1000;

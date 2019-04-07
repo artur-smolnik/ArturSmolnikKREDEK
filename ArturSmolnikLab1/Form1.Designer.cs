@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.timerMainWorldTimer = new System.Windows.Forms.Timer(this.components);
             this.labelPopulationNumber = new System.Windows.Forms.Label();
-            this.buttonTestButton = new System.Windows.Forms.Button();
+            this.buttonStartButton = new System.Windows.Forms.Button();
             this.labelPopulationNumberInfo = new System.Windows.Forms.Label();
             this.labelPlanetsNumberInfo = new System.Windows.Forms.Label();
             this.labelPlanetsNumber = new System.Windows.Forms.Label();
@@ -46,6 +46,7 @@
             this.labelDensity = new System.Windows.Forms.Label();
             this.buttonSpeedUp = new System.Windows.Forms.Button();
             this.buttonSlowDown = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // timerMainWorldTimer
@@ -64,16 +65,16 @@
             this.labelPopulationNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelPopulationNumber.Click += new System.EventHandler(this.LabelPopulation);
             // 
-            // buttonTestButton
+            // buttonStartButton
             // 
-            this.buttonTestButton.Location = new System.Drawing.Point(285, 30);
-            this.buttonTestButton.Name = "buttonTestButton";
-            this.buttonTestButton.Size = new System.Drawing.Size(165, 23);
-            this.buttonTestButton.TabIndex = 2;
-            this.buttonTestButton.Text = "TestButton";
-            this.buttonTestButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonTestButton.UseVisualStyleBackColor = true;
-            this.buttonTestButton.Click += new System.EventHandler(this.button_Click);
+            this.buttonStartButton.Location = new System.Drawing.Point(285, 30);
+            this.buttonStartButton.Name = "buttonStartButton";
+            this.buttonStartButton.Size = new System.Drawing.Size(165, 23);
+            this.buttonStartButton.TabIndex = 2;
+            this.buttonStartButton.Text = "Start";
+            this.buttonStartButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonStartButton.UseVisualStyleBackColor = true;
+            this.buttonStartButton.Click += new System.EventHandler(this.ButtonStart);
             // 
             // labelPopulationNumberInfo
             // 
@@ -85,7 +86,7 @@
             this.labelPopulationNumberInfo.TabIndex = 3;
             this.labelPopulationNumberInfo.Text = "Population:";
             this.labelPopulationNumberInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelPopulationNumberInfo.Click += new System.EventHandler(this.labelPopulationNumberInfo_Click);
+            this.labelPopulationNumberInfo.Click += new System.EventHandler(this.LabelPopulationNumberInfo);
             // 
             // labelPlanetsNumberInfo
             // 
@@ -97,7 +98,7 @@
             this.labelPlanetsNumberInfo.TabIndex = 4;
             this.labelPlanetsNumberInfo.Text = "Conquered planets:";
             this.labelPlanetsNumberInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelPlanetsNumberInfo.Click += new System.EventHandler(this.label1_Click_1);
+            this.labelPlanetsNumberInfo.Click += new System.EventHandler(this.LabelTechLevelInfo);
             // 
             // labelPlanetsNumber
             // 
@@ -109,19 +110,19 @@
             this.labelPlanetsNumber.TabIndex = 5;
             this.labelPlanetsNumber.Text = "0";
             this.labelPlanetsNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelPlanetsNumber.Click += new System.EventHandler(this.PlanetsNumber_Click);
+            this.labelPlanetsNumber.Click += new System.EventHandler(this.LabelPlanetsNumber);
             // 
             // labelTechLevelInfo
             // 
             this.labelTechLevelInfo.AutoSize = true;
             this.labelTechLevelInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.labelTechLevelInfo.Location = new System.Drawing.Point(14, 117);
+            this.labelTechLevelInfo.Location = new System.Drawing.Point(12, 117);
             this.labelTechLevelInfo.Name = "labelTechLevelInfo";
             this.labelTechLevelInfo.Size = new System.Drawing.Size(77, 17);
             this.labelTechLevelInfo.TabIndex = 4;
             this.labelTechLevelInfo.Text = "Tech level:";
             this.labelTechLevelInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelTechLevelInfo.Click += new System.EventHandler(this.label1_Click_1);
+            this.labelTechLevelInfo.Click += new System.EventHandler(this.LabelTechLevelInfo);
             // 
             // labelTechLevel
             // 
@@ -133,7 +134,7 @@
             this.labelTechLevel.TabIndex = 5;
             this.labelTechLevel.Text = "0";
             this.labelTechLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelTechLevel.Click += new System.EventHandler(this.techLevel_Click);
+            this.labelTechLevel.Click += new System.EventHandler(this.LabelTechLevel);
             // 
             // labelRacesAmount
             // 
@@ -145,7 +146,7 @@
             this.labelRacesAmount.TabIndex = 8;
             this.labelRacesAmount.Text = "0";
             this.labelRacesAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelRacesAmount.Click += new System.EventHandler(this.label1_Click_3);
+            this.labelRacesAmount.Click += new System.EventHandler(this.LabelRacesAmount);
             // 
             // labelRacesAmountInfo
             // 
@@ -157,18 +158,19 @@
             this.labelRacesAmountInfo.TabIndex = 9;
             this.labelRacesAmountInfo.Text = "Races amount:";
             this.labelRacesAmountInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelRacesAmountInfo.Click += new System.EventHandler(this.labelRacesAmountInfo_Click);
+            this.labelRacesAmountInfo.Click += new System.EventHandler(this.LabelRacesAmountInfo);
             // 
             // labelCurrentPlanetInfo
             // 
             this.labelCurrentPlanetInfo.AutoSize = true;
             this.labelCurrentPlanetInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.labelCurrentPlanetInfo.Location = new System.Drawing.Point(12, 36);
+            this.labelCurrentPlanetInfo.Location = new System.Drawing.Point(24, 36);
             this.labelCurrentPlanetInfo.Name = "labelCurrentPlanetInfo";
             this.labelCurrentPlanetInfo.Size = new System.Drawing.Size(129, 17);
             this.labelCurrentPlanetInfo.TabIndex = 10;
             this.labelCurrentPlanetInfo.Text = "Current planet info:";
             this.labelCurrentPlanetInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelCurrentPlanetInfo.Click += new System.EventHandler(this.LabelCurrentPlanetInfo);
             // 
             // labelInhabitantsInfo
             // 
@@ -180,6 +182,7 @@
             this.labelInhabitantsInfo.TabIndex = 11;
             this.labelInhabitantsInfo.Text = "Inhabitants:";
             this.labelInhabitantsInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelInhabitantsInfo.Click += new System.EventHandler(this.LabelInhabitantsInfo);
             // 
             // labelInhabitants
             // 
@@ -191,17 +194,19 @@
             this.labelInhabitants.TabIndex = 12;
             this.labelInhabitants.Text = "0";
             this.labelInhabitants.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelInhabitants.Click += new System.EventHandler(this.LabelInhabitants);
             // 
             // labelDensityInfo
             // 
             this.labelDensityInfo.AutoSize = true;
             this.labelDensityInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.labelDensityInfo.Location = new System.Drawing.Point(14, 171);
+            this.labelDensityInfo.Location = new System.Drawing.Point(12, 171);
             this.labelDensityInfo.Name = "labelDensityInfo";
             this.labelDensityInfo.Size = new System.Drawing.Size(59, 17);
             this.labelDensityInfo.TabIndex = 13;
             this.labelDensityInfo.Text = "Density:";
             this.labelDensityInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelDensityInfo.Click += new System.EventHandler(this.LabelDensityInfo);
             // 
             // labelDensity
             // 
@@ -213,17 +218,17 @@
             this.labelDensity.TabIndex = 14;
             this.labelDensity.Text = "0";
             this.labelDensity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelDensity.Click += new System.EventHandler(this.labelDensity_Click);
+            this.labelDensity.Click += new System.EventHandler(this.LabelDensity);
             // 
             // buttonSpeedUp
             // 
-            this.buttonSpeedUp.Location = new System.Drawing.Point(285, 65);
+            this.buttonSpeedUp.Location = new System.Drawing.Point(285, 59);
             this.buttonSpeedUp.Name = "buttonSpeedUp";
             this.buttonSpeedUp.Size = new System.Drawing.Size(105, 23);
             this.buttonSpeedUp.TabIndex = 15;
             this.buttonSpeedUp.Text = "SpeedUp";
             this.buttonSpeedUp.UseVisualStyleBackColor = true;
-            this.buttonSpeedUp.Click += new System.EventHandler(this.button1_Click);
+            this.buttonSpeedUp.Click += new System.EventHandler(this.ButtonSpeedUp);
             // 
             // buttonSlowDown
             // 
@@ -233,7 +238,12 @@
             this.buttonSlowDown.TabIndex = 16;
             this.buttonSlowDown.Text = "Slow down";
             this.buttonSlowDown.UseVisualStyleBackColor = true;
-            this.buttonSlowDown.Click += new System.EventHandler(this.buttonSlowDown_Click);
+            this.buttonSlowDown.Click += new System.EventHandler(this.ButtonSlowDown);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // Form1
             // 
@@ -254,7 +264,7 @@
             this.Controls.Add(this.labelTechLevelInfo);
             this.Controls.Add(this.labelPlanetsNumberInfo);
             this.Controls.Add(this.labelPopulationNumberInfo);
-            this.Controls.Add(this.buttonTestButton);
+            this.Controls.Add(this.buttonStartButton);
             this.Controls.Add(this.labelPopulationNumber);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -268,7 +278,7 @@
 
         private System.Windows.Forms.Timer timerMainWorldTimer;
         private System.Windows.Forms.Label labelPopulationNumber;
-        private System.Windows.Forms.Button buttonTestButton;
+        private System.Windows.Forms.Button buttonStartButton;
         private System.Windows.Forms.Label labelPopulationNumberInfo;
         private System.Windows.Forms.Label labelPlanetsNumberInfo;
         private System.Windows.Forms.Label labelPlanetsNumber;
@@ -283,6 +293,7 @@
         private System.Windows.Forms.Label labelDensity;
         private System.Windows.Forms.Button buttonSpeedUp;
         private System.Windows.Forms.Button buttonSlowDown;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 
